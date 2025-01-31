@@ -1,0 +1,101 @@
+Analisis dan Kebutuhan Sistem Pengelolaan Sampah
+1. Analisis Sistem
+Sistem pengelolaan sampah ini bertujuan untuk mencatat, mengelola, dan memantau data sampah yang dikumpulkan oleh pendata sampah serta mengelola kategori sampah dan pusat daur ulang yang ada. Proses pengelolaan data sampah akan mencakup pencatatan jenis sampah yang terkumpul, lokasi pengumpulan, jumlah sampah, serta data pusat daur ulang yang digunakan.
+
+Aktor Sistem:
+
+Admin: Admin bertanggung jawab penuh atas pengelolaan data pengguna, pusat daur ulang, kategori sampah, serta melihat laporan tentang pengelolaan sampah. Admin juga memiliki akses untuk mengedit atau menghapus data sampah yang ada di sistem.
+Pendata Sampah: Pendata sampah bertugas untuk memasukkan data sampah yang dikumpulkan, seperti jenis sampah, lokasi pengumpulan, dan berat sampah yang berhasil didaur ulang. Pendata sampah tidak memiliki akses untuk mengedit data pusat daur ulang atau kategori sampah.
+Proses Sistem: Proses dimulai ketika pendata sampah mencatat data sampah baru di sistem. Pendata sampah mengakses sistem untuk menginput jenis sampah yang terkumpul, jumlah sampah, dan pusat daur ulang yang dipakai. Admin dapat mengelola kategori sampah dan pusat daur ulang, serta mengakses laporan pengelolaan sampah.
+
+2. Kebutuhan Pengguna
+Admin:
+
+Admin akan bertanggung jawab untuk:
+Mengelola Pengguna: Menambah, mengedit, dan menghapus pengguna dalam sistem.
+Mengelola Pusat Daur Ulang: Menambah, mengedit, dan menghapus pusat daur ulang.
+Mengelola Kategori Sampah: Menambah, mengedit, dan menghapus kategori sampah (misalnya, organik, non-organik).
+Melihat Laporan Pengelolaan Sampah: Melihat laporan yang mencakup data pengelolaan sampah dan daur ulang.
+Pendata Sampah:
+
+Pendata sampah akan bertanggung jawab untuk:
+Menginput Data Sampah: Mencatat informasi mengenai jenis sampah yang terkumpul, lokasi, dan beratnya.
+Melihat Data Sampah: Memantau data sampah yang telah dicatat.
+Mengakses Data Pusat Daur Ulang dan Kategori Sampah: Pendata sampah dapat melihat data terkait pusat daur ulang dan kategori sampah untuk memastikan informasi yang akurat.
+3. Analisis Proses Bisnis
+Proses dimulai ketika pendata sampah memasukkan data sampah ke dalam sistem. Pendata sampah dapat mengakses form untuk memasukkan data seperti:
+
+Jenis sampah yang terkumpul (berdasarkan kategori sampah yang ada).
+Lokasi pengumpulan sampah.
+Berat sampah yang terkumpul.
+Setelah itu, admin dapat mengelola kategori sampah dan pusat daur ulang. Admin juga dapat menghasilkan laporan berdasarkan data yang telah tercatat dalam sistem, baik untuk analisis pengelolaan sampah maupun pelaporan kepada pihak terkait.
+
+4. Kebutuhan Sistem (Functional & Non-Functional)
+Kebutuhan Fungsional (Functional Requirements)
+
+Login Admin dan Pendata Sampah
+
+Deskripsi: Admin dan Pendata Sampah harus dapat login menggunakan username dan password yang valid.
+Proses: Pengguna memasukkan username dan password, sistem memverifikasi kredensial. Jika valid, pengguna dapat mengakses sistem.
+Kebutuhan:
+Sistem harus memvalidasi kredensial pengguna.
+Jika login gagal, sistem harus memberikan pesan kesalahan yang sesuai.
+Input Data Sampah
+
+Deskripsi: Pendata sampah harus dapat memasukkan data sampah ke dalam sistem.
+Proses: Pendata sampah mengisi form yang berisi jenis sampah, lokasi, dan berat sampah.
+Kebutuhan:
+Semua field harus diisi sebelum data sampah dapat disimpan.
+Sistem menghasilkan ID data sampah yang unik secara otomatis.
+Data sampah harus disimpan dengan format yang benar dalam database.
+Pengelolaan Kategori Sampah dan Pusat Daur Ulang
+
+Deskripsi: Admin dapat menambah, mengedit, dan menghapus kategori sampah serta pusat daur ulang.
+Proses: Admin mengakses menu kategori sampah dan pusat daur ulang, kemudian melakukan perubahan sesuai kebutuhan.
+Kebutuhan:
+Kategori sampah dan pusat daur ulang harus terhubung dengan data sampah yang relevan.
+Sistem harus menyimpan data dengan format yang benar dan terstruktur dalam database.
+Melihat Data Sampah dan Laporan
+
+Deskripsi: Admin dapat melihat laporan tentang pengelolaan sampah dan daur ulang.
+Proses: Admin memilih laporan yang ingin dilihat dan sistem menampilkan data terkait.
+Kebutuhan:
+Laporan harus mencakup semua data sampah yang tercatat.
+Laporan harus dapat diekspor atau dicetak jika diperlukan.
+Pencarian dan Penyaringan Data
+
+Deskripsi: Admin dan Pendata Sampah dapat mencari dan menyaring data berdasarkan kriteria tertentu seperti jenis sampah, lokasi, atau tanggal.
+Kebutuhan:
+Fitur pencarian dan penyaringan harus cepat dan akurat.
+Sistem harus dapat menangani volume data yang besar dengan baik.
+Kebutuhan Non-Fungsional (Non-Functional Requirements)
+
+Keamanan
+
+Deskripsi: Sistem harus aman dan melindungi data sensitif seperti informasi pengguna dan sampah.
+Kebutuhan:
+Sistem harus menggunakan otentikasi dua faktor (2FA) untuk login.
+Data yang disimpan di database harus terenkripsi.
+Keandalan (Reliability)
+
+Deskripsi: Sistem harus berfungsi dengan baik dan memiliki downtime yang minimal.
+Kebutuhan:
+Sistem harus tersedia 99% sepanjang waktu.
+Proses backup data harus dilakukan secara rutin untuk menghindari kehilangan data.
+Kinerja (Performance)
+
+Deskripsi: Sistem harus dapat menangani permintaan yang tinggi dan memproses data dengan cepat.
+Kebutuhan:
+Waktu respons pencarian data harus kurang dari 3 detik.
+Sistem harus dapat menangani hingga 500 transaksi per menit tanpa penurunan kinerja.
+Skalabilitas
+
+Deskripsi: Sistem harus dapat di-scale up untuk mendukung pertumbuhan jumlah data.
+Kebutuhan:
+Sistem harus dapat menangani lebih banyak data sampah tanpa mempengaruhi kinerja.
+Usability
+
+Deskripsi: Antarmuka sistem harus mudah digunakan oleh admin dan pendata sampah yang tidak memiliki latar belakang teknis.
+Kebutuhan:
+Desain UI harus intuitif dan mudah dipahami.
+Proses input data dan pencarian harus sederhana.

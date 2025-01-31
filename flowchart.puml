@@ -1,0 +1,64 @@
+@startuml
+!define RECTANGLE class
+
+RECTANGLE users {
+    +id
+    +name
+    +email
+    +avatar_url
+    +email_verified_at
+    +password
+    +remember_token
+    +created_at
+    +updated_at
+}
+
+RECTANGLE password_reset_tokens {
+    +email
+    +token
+    +created_at
+}
+
+RECTANGLE sessions {
+    +id
+    +user_id
+    +ip_address
+    +user_agent
+    +payload
+    +last_activity
+}
+
+RECTANGLE centers {
+    +id
+    +name
+    +address
+    +phone_number
+    +created_at
+    +updated_at
+}
+
+RECTANGLE waste_categories {
+    +id
+    +category_name
+    +description
+    +created_at
+    +updated_at
+}
+
+RECTANGLE waste_records {
+    +id
+    +user_id
+    +waste_category_id
+    +center_id
+    +weight
+    +date
+    +description
+    +created_at
+    +updated_at
+}
+
+users -down-> waste_records : "has"
+waste_categories -down-> waste_records : "used in"
+centers -down-> waste_records : "used in"
+users -down-> sessions : "manages"
+@enduml
